@@ -11,7 +11,7 @@ type Response struct {
 
 func Handler(request events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse, error) {
 	return events.APIGatewayProxyResponse{
-		Body: "Go Serverless v1.0! Your function executed successfully!",
+		Body: "Go Serverless!",
 		StatusCode: 200,
 	}, nil
 }

@@ -2,13 +2,18 @@ AWSTemplateFormatVersion : '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
 Description: go-serverless-lambda-apigw-offline-skeleton
 Resources:
-  HelloWorldFunction:
+  Vanilla:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: bin/vanilla
+      Runtime: go1.x
+  Apigw:
     Type: AWS::Serverless::Function
     Properties:
       Handler: bin/apigw
       Runtime: go1.x
       Events:
-        Vote:
+        SampleEvent:
           Type: Api
           Properties:
             Path: /

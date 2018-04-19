@@ -10,7 +10,7 @@ type Response struct {
 
 func Handler() (Response, error) {
 	return Response{
-		Message: "Okay so your other function also executed successfully!",
+		Message: "I'm not a APIGW interfacing lambda! Invoke me locally: sam local invoke Vanilla -e event.json",
 	}, nil
 }
 
