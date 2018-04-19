@@ -23,8 +23,13 @@ git clone https://github.com/sepehr/serverless-offline-go.git golambda
 cd golambda/
 make
 
-# Run the "apigw" lambda locally at localhost:3000
+# Invoke the "apigw" sample lambda locally at localhost:3000
 sam local start-api
+
+# Invoke the "Vanilla" sample lambda locally using a custom event payload file
+sam local invoke "Vanilla" -e path/to/event.json
+# Or using an event payload from the stdin
+ echo '{"message": "Hey, are you there?" }' | sam local invoke "Vanilla"
 
 # Deploy to AWS
 # Requires authenticated aws-cli setup in place
